@@ -246,179 +246,105 @@
 
 
       <script>
-        const quizData = [
-          // Your quiz questions and answers
-          {
-            question: "मानव मूल्यों के संदर्भ में, निम्नलिखित में से किसे 'सहिष्णुता' की अद्भुत उदाहरण कहा जा सकता है?","In the context of human values, which of the following can be called a wonderful example of 'tolerance'?",
-            a: "महात्मा गांधी","Mahatma Gandhi",
-            b: "एल्बर्ट आइंस्टीन","Albert Einstein",
-            c: "विलियम शेक्सपियर","William Shakespeare",
-            d: "मदर टेरेसा","Mother Teresa",
-            correct: "a",
-          },
-          {
-            question: "राष्ट्रीय सुशासन केंद्र (एन सी जी जी ) ने किस देश के सिविल सेवकों को सफलता पूर्वक प्रशिक्षित किया है ?",
-            a: "भारत",
-            b: "फ्रांस",
-            c: "मालदीव",
-            d: "चीन",
-            correct: "c",
-          },
-          {
-            question: "कौन सी संस्था सितम्बर से देश भर में 10 मिलियन ब्रशलेस डायरेक्ट करंट मोटर पंखे तैनात करने के लिए तैयार है?",
-            a: "EESL",
-            b: "BHEL",
-            c: "BAJAJ",
-            d: "None of these",
-            correct: "a",
-          },
-          {
-            question: "सुतीर्था मुखर्जी और अयहिका मुखर्जी किस खेल से सम्बंधित हैं ?",
-            a: "टेबल टेनिस",
-            b: "हॉकी",
-            c: "क्रिकेट",
-            d: "कबड्डी",
-            correct: "a",
-          },
-          {
-            question: "किस केन्द्रीय मंत्रालय ने स्वच्छ सर्वेक्षण 2023 मेरा शहर मेरी पहचान सर्वेक्षण शुरू किया ?",
-            a: "वित्त मंत्रालय",
-            b: "रेल मंत्रालय",
-            c: "आवास और शहरी मामलो का मंत्रालय",
-            d: "ग्रह मंत्रालय",
-            correct: "c",
-          },
-          {
-            question: "क़्वीन पाइन एप्पल नामक अनानास की एक महत्वपूर्ण किस्म किस राज्य में ऊगाई जाती हैं ?",
-            a: "बिहार",
-            b: "त्रिपुर",
-            c: "राजस्तान",
-            d: "दिल्ली",
-            correct: "b",
-          },
-          {
-            question: "किस देश ने नेशनल रिसर्च फाउंडेशन विधेयक 2023 को मंजूरी दी ?",
-            a: "भारत",
-            b: "अमेरिका",
-            c: "रूस",
-            d: "वियतनाम",
-            correct: "a",
-          },
-          {
-            question: "कौन - सा मंत्रालय यूरिया सब्सिडी योजना से जुड़ा हैं ?",
-            a: "रसायन और उर्वरक मंत्रालय",
-            b: "आवास और शहरी मामलो का मंत्रालय",
-            c: "ग्रह मंत्रालय",
-            d: "वित्त मंत्रालय",
-            correct: "a",
-          },
-          {
-            question: "वर्ल्ड माइनिंग कांग्रेस का मेजवान कौन सा देश हैं ?",
-            a: "चीन",
-            b: "भारत",
-            c: "ऑस्ट्रेलिया",
-            d: "रूस",
-            correct: "c",
-          },
-          {
-            question: "किस केंद्रीय मंत्रालय ने ''दिव्य कला मेला'' मेले की मेजवानी की ?",
-            a: "आवास और शहरी मामलो का मंत्रालय",
-            b: "रसायन और उर्वरक मंत्रालय",
-            c: "सामाजिक न्याय और अधिकारिता मंत्रालय",
-            d: "इनमे से कोई नहीं",
-            correct: "c",
-          },
-        ];
+  const quizData = [
+    {
+      question: "In the context of human values, which of the following can be called a wonderful example of 'tolerance'?",
+      a: "Mahatma Gandhi",
+      b: "Albert Einstein",
+      c: "William Shakespeare",
+      d: "Mother Teresa",
+      correct: "a",
+    },
+    {
+      question: "राष्ट्रीय सुशासन केंद्र (एन सी जी जी ) ने किस देश के सिविल सेवकों को सफलता पूर्वक प्रशिक्षित किया है ?",
+      a: "भारत",
+      b: "फ्रांस",
+      c: "मालदीव",
+      d: "चीन",
+      correct: "c",
+    },
+    {
+      question: "कौन सी संस्था सितम्बर से देश भर में 10 मिलियन ब्रशलेस डायरेक्ट करंट मोटर पंखे तैनात करने के लिए तैयार है?",
+      a: "EESL",
+      b: "BHEL",
+      c: "BAJAJ",
+      d: "None of these",
+      correct: "a",
+    },
+    // Add more questions here...
+  ];
 
-        const quiz = document.getElementById('quiz');
-        const answerEls = document.querySelectorAll('.answer');
-        const questionEl = document.getElementById('question');
-        const a_text = document.getElementById('a_text');
-        const b_text = document.getElementById('b_text');
-        const c_text = document.getElementById('c_text');
-        const d_text = document.getElementById('d_text');
-        const submitBtn = document.getElementById('sub');
-        const SubmitBtn = document.getElementById('Submit');
-        let currentQuiz = 0;
-        let score = 0;
+  const questionEl = document.getElementById("question");
+  const answerEls = document.querySelectorAll(".answer");
+  const a_text = document.getElementById("a_text");
+  const b_text = document.getElementById("b_text");
+  const c_text = document.getElementById("c_text");
+  const d_text = document.getElementById("d_text");
+  const submitBtn = document.getElementById("Submit");
+  const finalSubmitBtn = document.getElementById("sub");
+  const progressBar = document.getElementById("progress-bar");
 
+  let currentQuiz = 0;
+  let score = 0;
+
+  loadQuiz();
+
+  function loadQuiz() {
+    deselectAnswers();
+    const currentQuizData = quizData[currentQuiz];
+
+    questionEl.innerText = currentQuizData.question;
+    a_text.innerText = currentQuizData.a;
+    b_text.innerText = currentQuizData.b;
+    c_text.innerText = currentQuizData.c;
+    d_text.innerText = currentQuizData.d;
+
+    // Update progress bar
+    const progress = ((currentQuiz + 1) / quizData.length) * 100;
+    progressBar.style.width = progress + "%";
+  }
+
+  function getSelected() {
+    let answer = undefined;
+    answerEls.forEach((answerEl) => {
+      if (answerEl.checked) {
+        answer = answerEl.id;
+      }
+    });
+    return answer;
+  }
+
+  function deselectAnswers() {
+    answerEls.forEach((answerEl) => {
+      answerEl.checked = false;
+    });
+  }
+
+  submitBtn.addEventListener("click", () => {
+    const answer = getSelected();
+    if (answer) {
+      if (answer === quizData[currentQuiz].correct) {
+        score++;
+      }
+
+      currentQuiz++;
+
+      if (currentQuiz < quizData.length) {
         loadQuiz();
+      } else {
+        document.getElementById("quiz").innerHTML = `
+          <h2>You answered ${score}/${quizData.length} questions correctly.</h2>
+          <button onclick="location.reload()">Reload</button>
+        `;
+      }
+    }
+  });
 
-        function loadQuiz() {
-          deselectAnswers();
+  finalSubmitBtn.addEventListener("click", () => {
+    alert(`You answered ${score}/${quizData.length} correctly.`);
+  });
+</script>
 
-          const currentQuizData = quizData[currentQuiz];
-
-          questionEl.innerText = currentQuizData.question;
-          a_text.innerText = currentQuizData.a;
-          b_text.innerText = currentQuizData.b;
-          c_text.innerText = currentQuizData.c;
-          d_text.innerText = currentQuizData.d;
-        }
-
-        function deselectAnswers() {
-          answerEls.forEach((answerEl) => (answerEl.checked = false));
-        }
-
-        function getSelected() {
-          let answer;
-
-          answerEls.forEach((answerEl) => {
-            if (answerEl.checked) {
-              answer = answerEl.id;
-            }
-          });
-
-          return answer;
-        }
-
-        SubmitBtn.addEventListener('click', () => {
-          const answer = getSelected();
-
-          if (answer) {
-            if (answer === quizData[currentQuiz].correct) {
-              score++;
-            }
-
-            currentQuiz++;
-
-            if (currentQuiz < quizData.length) {
-              loadQuiz();
-            }
-          }
-        });
-
-        submitBtn.addEventListener('click', () => {
-          const answer = getSelected();
-
-          if (answer) {
-            quiz.innerHTML = `
-        
-          <h2 name="Score">You correctly answered ${score} out of ${quizData.length} questions</h2>
-              <button class="open-button" onclick="openForm()">Submit</button>
-            
-            <div class="form-popup" id="myForm">
-                <form action="https://script.google.com/macros/s/AKfycbxrn11wJJEXfSCG8R3jM0aEP1bH634boQOcMRQ8qb9cvkbQzKBbVhduMSCvXXw8UoZj/exec" class="form-data" method="POST">
-              
-
-                    <h1>Enter Details</h1>
-
-                    
-                    <input type="text" name="Name" class="n" placeholder="Enter Name Here">
-                
-                
-                    <input type="text" name="Phone" id="Phone" class="n" placeholder="Enter Phone Number">
-
-                    <input type="hidden" name="Score" value="${score}">
-
-                    <button type="submit" id='submit' class="btn">Submit</button>
-                    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-                </form>
-            </div>
-          `;
-          }
-        });
-      </script>
     </div>
 
     <!-- Your Google Apps Script code should be in a separate .gs file and deployed as a web app. -->
